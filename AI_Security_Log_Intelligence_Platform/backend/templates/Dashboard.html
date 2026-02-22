@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Dashboard | AI Security</title>
+
+
+<style>
+
+    body{
+        margin:0;
+        height:100vh;
+        font-family:Segoe UI;
+        background: url("{{ url_for('static', filename='images/das_image.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:white;
+    }
+
+    /* NAVBAR */
+    .navbar{
+        position:fixed;
+        top:0;
+        left:0;
+        width:95%;
+        padding:15px 40px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+
+       background: transparent;
+        backdrop-filter:blur(10px);
+        -webkit-backdrop-filter:blur(10px);
+
+        border-bottom:1px solid rgba(255,255,255,0.1);
+        z-index:1000;
+    }
+
+    .logo{
+        font-size:20px;
+        font-weight:bold;
+        color:#60a5fa;
+    }
+
+    .nav-center{
+        display:flex;
+        gap:30px;
+        align-items:center;
+    }
+
+    .nav-center a{
+        text-decoration:none;
+        color:white;
+        font-size:15px;
+        transition:0.3s;
+    }
+
+    .nav-center a:hover{
+        color:#3b82f6;
+    }
+
+    .nav-right{
+        display:flex;
+        align-items:center;
+        gap:20px;
+    }
+
+    .welcome{
+        font-size:14px;
+        color:#cbd5f5;
+    }
+
+    .logout{
+        padding:8px 14px;
+        background:#ef4444;
+        border-radius:6px;
+        text-decoration:none;
+        color:white;
+        transition:0.3s;
+    }
+
+    .logout:hover{
+        background:#dc2626;
+    }
+
+    /* MAIN CONTENT */
+    .main{
+        padding-top:100px;
+        display:flex;
+        justify-content:center;
+    }
+
+    .dashboard-wrapper{
+        max-width:700px;
+        text-align:center;
+    }
+
+    h1{
+        margin-bottom:5px;
+    }
+
+    .subtitle{
+        color:#94a3b8;
+        margin-bottom:30px;
+    }
+
+    /* CARDS */
+    .cards{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:30px;
+    }
+
+    .card{
+        width:280px;
+        height:160px;
+        padding:25px;
+        border-radius:15px;
+         background:rgba(255,255,255,0.05);
+        backdrop-filter: blur(10px);
+        transition:0.3s;
+        cursor:pointer;
+        box-shadow:0 0 20px rgba(0,0,0,0.7);
+    }
+
+    .card:hover{
+        transform:translateY(-8px) scale(1.03);
+        box-shadow:0 0 25px #3b82f6;
+    }
+
+    .card h2{
+        margin-bottom:10px;
+    }
+
+    .card p{
+        color:#94a3b8;
+        font-size:14px;
+    }
+
+    a{
+        text-decoration:none;
+        color:white;
+    }
+
+</style>
+
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+
+<div class="logo">AI Security</div>
+
+<div class="nav-center">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/about">About Us</a>
+    <a href="/contact">Contact Us</a>
+    <a href="/chatbot">Chatbot</a>
+</div>
+
+<div class="nav-right">
+    <div class="welcome">Welcome, {{ user }}</div>
+    <a href="/logout" class="logout">Logout</a>
+</div>
+
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main">
+
+
+<div class="dashboard-wrapper">
+
+    <h1>Security Monitoring Dashboard</h1>
+    <p class="subtitle">Select a service to analyze logs</p>
+
+    <div class="cards">
+
+        <a href="/upload">
+            <div class="card">
+                <h2>Windows Security Logs</h2>
+                <p>Detect brute-force login attempts</p>
+            </div>
+        </a>
+
+        <a href="/upload">
+            <div class="card">
+                <h2>System Logs</h2>
+                <p>Monitor shutdowns and services</p>
+            </div>
+        </a>
+
+        <a href="/upload">
+            <div class="card">
+                <h2>Application Logs</h2>
+                <p>Identify crashes and abnormal behavior</p>
+            </div>
+        </a>
+
+        <a href="/upload">
+            <div class="card">
+                <h2>Web Server Logs</h2>
+                <p>Detect scanning and web attacks</p>
+            </div>
+        </a>
+
+    </div>
+
+</div>
+
+
+</div>
+
+</body>
+</html>
