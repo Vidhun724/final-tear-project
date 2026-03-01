@@ -91,6 +91,14 @@ def Dashboard():
     return render_template("Dashboard.html")
 
 
+@app.route('/about')
+def about():
+    if 'user' not in session:
+        return redirect(url_for('login_page'))
+    
+    return render_template("about.html")
+
+
 
 
 if __name__ == '__main__':

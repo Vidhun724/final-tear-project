@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Us</title>
+
+<style>
+
+body{
+    margin:0;
+        height:100vh;
+        font-family:Segoe UI;
+        background: url("{{ url_for('static', filename='images/about_bar.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:white;
+}
+
+
+
+/* Glass container */
+.container{
+    width:70%;
+    max-width:900px;
+    padding:40px;
+    border-radius:20px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color:white;
+    text-align:center;
+    box-shadow:0 0 30px rgba(0,0,0,0.8);
+}
+
+/* Heading */
+.container h1{
+    margin-bottom:20px;
+    font-size:32px;
+}
+
+/* Paragraph */
+.container p{
+    line-height:1.9;
+    font-size:18px;
+    color:#EAF6FF;
+}
+
+/* Back button */
+.back-btn{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.back-btn:hover{
+    background:#0ea5e9;
+    transform:scale(1.05);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>About AI Security Log Intelligence Platform</h1>
+
+<p>
+The AI Security Log Intelligence Platform is a cybersecurity project that analyzes system log files to detect suspicious activities.
+It helps users understand system behavior and identify possible attacks such as brute-force login attempts.
+The platform provides a simple dashboard where users can upload logs and view security analysis reports.
+Our aim is to make security monitoring easy and understandable for students and beginners.
+</p>
+
+<a href="{{ url_for('Dashboard') }}" class="back-btn">Back to Dashboard</a>
+
+</div>
+
+</body>
+</html>
