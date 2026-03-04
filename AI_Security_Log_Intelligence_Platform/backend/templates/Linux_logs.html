@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload Linux Security Logs</title>
+
+
+
+<style>
+
+    body{
+    margin:0;
+        height:100vh;
+        font-family:Segoe UI;
+        background: url("{{ url_for('static', filename='images/upload_image.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:white;
+}
+
+.card{
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    width: 400px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    text-align: center; 
+    animation:fadeIn 1s ease;
+}
+
+.input{
+    width:75%;
+    padding:10px;
+    margin-top:15px;
+    border-radius:8px;
+    border:none;
+    background: rgba(255,255,255,0.1);
+    color:white;
+    font-size:16px;
+    transition:0.3s;    
+}
+
+input:focus{
+        box-shadow:0 0 8px #3b82f6;
+}
+
+.up_button{
+        width:65%;
+        padding:12px;
+        margin-top:15px;
+        border:none;
+        border-radius:8px;
+        background:white;
+        color:black;
+        font-weight:bold;
+        cursor:pointer;
+        transition:0.3s;
+    }
+
+    .up_button:hover{
+        background:#1d4ed8;
+        transform:scale(1.05);
+        box-shadow:0 0 12px #0D0221;
+    }
+
+.b_button{
+        display:inline-block;
+        margin-top:30px;
+        padding:12px 22px;
+        border-radius:12px;
+        text-decoration:none;
+        background:#38bdf8;
+        color:black;
+        font-weight:bold;
+        transition:0.3s;
+}
+
+
+.b_button:hover{
+        background:#0ea5e9;
+        transform:scale(1.05);
+
+        
+    }
+
+@keyframes fadeIn{
+        from{opacity:0; transform:translateY(20px);}
+        to{opacity:1; transform:translateY(0);}
+ }
+
+</style>
+
+</head>
+
+<body>
+    <div class="card">
+
+<h1>Linux Security Log Upload</h1>
+
+<form action="/upload_Linux" method="POST" enctype="multipart/form-data">
+
+<input type="file" name="logfile" required class="input">
+
+<br><br>
+
+<button type="submit" class="up_button">UPLOAD</button>
+
+
+</form>
+
+<br><br>
+<a href="/Dashboard" class="b_button">Back to Dashboard</a>
+</div>
+
+</body>
+</html>

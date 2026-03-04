@@ -17,8 +17,8 @@ body{
         justify-content:center;
         align-items:center;
         color:white;
-}
 
+}
 
 
 /* Glass container */
@@ -33,6 +33,7 @@ body{
     color:white;
     text-align:center;
     box-shadow:0 0 30px rgba(0,0,0,0.8);
+    animation:fadeIn 1s ease;
 }
 
 /* Heading */
@@ -61,6 +62,11 @@ body{
     transition:0.3s;
 }
 
+ @keyframes fadeIn{
+        from{opacity:0; transform:translateY(20px);}
+        to{opacity:1; transform:translateY(0);}
+ }
+
 .back-btn:hover{
     background:#0ea5e9;
     transform:scale(1.05);
@@ -85,6 +91,8 @@ Our aim is to make security monitoring easy and understandable for students and 
 <a href="{{ url_for('Dashboard') }}" class="back-btn">Back to Dashboard</a>
 
 </div>
+
+
 
 </body>
 </html>

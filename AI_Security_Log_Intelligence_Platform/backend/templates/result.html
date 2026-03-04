@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Analysis Result</title>
+
+<style>
+
+body{
+    margin:0;
+    height:100vh;
+    font-family:Segoe UI;
+    background: url("{{ url_for('static', filename='images/upload_image.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+}
+
+.card{
+    background: rgba(255,255,255,0.05);
+    padding: 30px;
+    width: 550px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    text-align: center; 
+    animation:fadeIn 1s ease;
+}
+
+/* Table Styling */
+
+table{
+    width:100%;
+    border-collapse: collapse;
+    margin-top:20px;
+}
+
+th{
+    background:#38bdf8;
+    color:black;
+    padding:10px;
+}
+
+td{
+    padding:10px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+}
+
+tr:hover{
+    background: rgba(255,255,255,0.1);
+}
+
+/* Button */
+
+.b_button{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.b_button:hover{
+    background:#0ea5e9;
+    transform:scale(1.05);
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Windows Security Log Analysis</h1>
+
+{% if results %}
+<table>
+
+<tr>
+<th>Attack Type</th>
+<th>Severity</th>
+<th>Evidence</th>
+</tr>
+
+{% for r in results %}
+
+<tr>
+<td>{{ r.attack }}</td>
+<td>{{ r.severity }}</td>
+<td>{{ r.evidence }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% else %}
+
+<h2>{{ result }}</h2>
+
+{% endif %}
+
+<a href="/windows_logs" class="b_button">Back to Upload</a>
+
+</div>
+
+</body>
+</html>

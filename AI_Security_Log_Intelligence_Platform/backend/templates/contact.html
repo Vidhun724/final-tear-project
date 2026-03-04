@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact Us</title>
+
+<style>
+body{
+    margin:0;
+        height:100vh;
+        font-family:Segoe UI;
+        background: url("{{ url_for('static', filename='images/about_bar.jpg') }}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        color:white;
+}
+
+.card{
+    background: rgba(255,255,255,0.05);
+    padding: 20px;
+    width: 340px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    text-align: center; 
+    
+    animation:fadeIn 1s ease;
+}
+
+.back_button{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    background:white;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.back_button:hover{
+        background:#1d4ed8;
+        transform:scale(1.05);
+        box-shadow:0 0 12px #0D0221;
+    }
+
+
+.d_back_button{
+    display:inline-block;
+    margin-top:30px;
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.d_back_button:hover{
+        background:#0ea5e9;
+        transform:scale(1.05);
+}
+input{
+        width:90%;
+        padding:12px;
+        margin:8px 0;
+        border:none;
+        border-radius:8px;
+        outline:none;
+        background:#1e293b;
+        color:white;
+        transition:0.3s;
+    }
+    input:focus{
+        box-shadow:0 0 8px #3b82f6;
+    }
+
+textarea:focus{
+        box-shadow:0 0 8px #3b82f6;
+}
+textarea{
+        width:90%;
+        padding:12px;
+        margin:8px 0;
+        border:none;
+        border-radius:8px;
+        outline:none;
+        background:#1e293b;
+        color:white;
+        transition:0.3s;
+        resize:none;
+    }
+
+@keyframes fadeIn{
+        from{opacity:0; transform:translateY(20px);}
+        to{opacity:1; transform:translateY(0);}
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Contact Us</h1>
+
+<form method="POST" action="/contact">
+
+    <input type="text" name="name" placeholder="Enter your name" required>
+    <br><br>
+
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <br><br>
+
+    <textarea name="message" placeholder="Enter your message" rows="5" required></textarea>
+    <br><br>
+
+    <button type="submit" class="back_button">Send Message</button>
+
+</form>
+
+<br><br>
+<a href="/Dashboard" class="d_back_button">Back to Dashboard</a>
+
+</div>
+</body>
+</html>
