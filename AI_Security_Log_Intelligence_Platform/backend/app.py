@@ -4,7 +4,8 @@ from flask import Flask, render_template, request, redirect, url_for , session
 from werkzeug.security import generate_password_hash, check_password_hash
 from windows_analyzer import analyze_windows_log
 from Linux_analyzer import analyze_system_log
-
+from application_analyzer import analyze_application_log
+from webserver_analyzer import analyze_webserver_log
 
 app = Flask(__name__)
 
@@ -175,7 +176,7 @@ def upload_windows():
 
     results = analyze_windows_log(filepath)
 
-    return render_template("result.html", results=results)
+    return render_template("result.html", results=results , log_type = "Windows Security Log")
 
 
 
@@ -197,7 +198,7 @@ def upload_Linux():
 
     results = analyze_system_log(filepath)
 
-    return render_template("result.html", results=results)
+    return render_template("result.html", results=results , log_type = "Linux Security Log")
 
 
 
@@ -207,5 +208,66 @@ def Linux_logs():
 
 
 
+@app.route('/upload_application', methods=['POST'])
+def upload_application():
+
+    if 'logfile' not in request.files:
+        return "No file uploaded"
+
+    file = request.files['logfile']
+
+    if file.filename == '':
+        return "No selected file"
+
+    filename = file.filename
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+    file.save(filepath)
+
+    results = analyze_application_log(filepath)
+
+    return render_template(
+        "result.html",
+        results=results,
+        log_type="Application Security Logs"
+    )
+
+@app.route('/Application_logs')
+def Application_logs():
+    return render_template("Application_logs.html")
+
+
+
+@app.route('/upload_webserver', methods=['POST'])
+def upload_webserver():
+
+    if 'logfile' not in request.files:
+        return "No file uploaded"
+
+    file = request.files['logfile']
+
+    if file.filename == '':
+        return "No selected file"
+
+    filename = file.filename
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+
+    file.save(filepath)
+
+    results = analyze_webserver_log(filepath)
+
+    return render_template(
+        "result.html",
+        results=results,
+        log_type="Web Server Security Logs"
+    )
+
+@app.route('/webserver_logs')
+def webserver_logs():
+    return render_template("webserver_logs.html")
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000,debug=True)
+    
+    
+    

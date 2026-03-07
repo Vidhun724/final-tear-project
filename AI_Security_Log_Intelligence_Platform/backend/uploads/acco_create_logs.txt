@@ -1,0 +1,5 @@
+Event ID: 4720
+A user account was created.
+
+Account Name: hacker_user
+Domain: WORKGROUP

@@ -1,0 +1,5 @@
+2025-03-10 10:10:12 INFO User login successful for user vidhun
+2025-03-10 10:12:45 INFO Data retrieved successfully from database
+2025-03-10 10:15:20 INFO User profile updated successfully
+2025-03-10 10:18:05 INFO User logout successful
+2025-03-10 10:20:33 INFO New session created for user admin

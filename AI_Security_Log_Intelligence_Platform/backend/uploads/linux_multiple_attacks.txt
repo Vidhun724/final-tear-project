@@ -1,0 +1,7 @@
+Jul 10 10:40:01 server sshd[1400]: Failed password for root from 192.168.1.20 port 22 ssh2
+Jul 10 10:40:02 server sshd[1401]: Failed password for root from 192.168.1.20 port 22 ssh2
+Jul 10 10:40:03 server sshd[1402]: Failed password for root from 192.168.1.20 port 22 ssh2
+Jul 10 10:40:04 server sshd[1403]: Failed password for root from 192.168.1.20 port 22 ssh2
+Jul 10 10:40:05 server sshd[1404]: Failed password for root from 192.168.1.20 port 22 ssh2
+
+Jul 10 10:41:10 server sudo: hacker : TTY=pts/0 ; PWD=/home/hacker ; USER=root ; COMMAND=/bin/useradd attacker

@@ -25,8 +25,16 @@ def analyze_system_log(filepath):
             "evidence": f"{failed_ssh} failed SSH login attempts detected"
         })
 
-    if sudo_usage > 0:
+    if sudo_usage > 0 and sudo_usage <= 3:
         results.append({
+            "attack": "Privilege Command Usage",
+            "severity": "Low",
+            "evidence": f"{sudo_usage} sudo commands executed"
+        })
+
+
+    if sudo_usage > 3:
+            results.append({
             "attack": "Privilege Command Usage",
             "severity": "Medium",
             "evidence": f"{sudo_usage} sudo commands executed"
