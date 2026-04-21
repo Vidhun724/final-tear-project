@@ -1,0 +1,3 @@
+Jul 10 10:10:01 server sshd[1200]: Accepted password for vidhun from 192.168.1.5 port 22 ssh2
+Jul 10 10:15:22 server sudo: vidhun : TTY=pts/0 ; PWD=/home/vidhun ; USER=root ; COMMAND=/bin/apt update
+Jul 10 10:20:12 server sshd[1205]: Accepted password for user1 from 192.168.1.6 port 22 ssh2

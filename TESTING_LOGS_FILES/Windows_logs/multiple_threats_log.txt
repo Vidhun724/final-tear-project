@@ -1,0 +1,12 @@
+Event ID: 4625 Failed login attempt
+Event ID: 4625 Failed login attempt
+Event ID: 4625 Failed login attempt
+Event ID: 4625 Failed login attempt
+Event ID: 4625 Failed login attempt
+Event ID: 4625 Failed login attempt
+
+Event ID: 4672
+Special privileges assigned to new logon
+
+Event ID: 4720
+A user account was created

@@ -9,7 +9,7 @@ body{
     margin:0;
     height:100vh;
     font-family:Segoe UI;
-    background: url("{{ url_for('static', filename='images/upload_image.jpg') }}");
+    background: url("{{ url_for('static', filename='images/about_bar.jpg') }}");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,6 +72,23 @@ tr:hover{
     transform:scale(1.05);
 }
 
+.ai_button{
+    display:inline-block;
+    margin-top:20px;
+    padding:12px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    background:#38bdf8;
+    color:black;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+.ai_button:hover{
+    background:#0ea5e9;
+    transform:scale(1.05);
+}
+
 @keyframes fadeIn{
     from{opacity:0; transform:translateY(20px);}
     to{opacity:1; transform:translateY(0);}
@@ -88,6 +105,7 @@ tr:hover{
 <h1>{{ log_type }} Analysis</h1>
 
 {% if results %}
+
 <table>
 
 <tr>
@@ -107,6 +125,13 @@ tr:hover{
 {% endfor %}
 
 </table>
+
+<!-- ✅ FIXED AI BUTTON -->
+<a href="/chatbot?attack={{ results[0].attack }}&severity={{ results[0].severity }}&evidence={{ results[0].evidence }}">
+    <button class="ai_button">
+        Explain with AI 🤖
+    </button>
+</a>
 
 {% else %}
 

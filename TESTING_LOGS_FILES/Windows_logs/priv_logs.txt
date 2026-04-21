@@ -1,0 +1,8 @@
+Event ID: 4624
+User Login Successful
+
+Event ID: 4672
+Special privileges assigned to new logon
+
+Account Name: admin
+Privileges: Administrator

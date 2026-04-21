@@ -1,0 +1,6 @@
+2025-03-10 14:00:01 INFO User login successful
+2025-03-10 14:01:10 ERROR Unauthorized access attempt detected
+2025-03-10 14:02:12 WARNING Failed login attempt for user admin
+2025-03-10 14:02:15 WARNING Failed login attempt for user admin
+2025-03-10 14:02:18 WARNING Failed login attempt for user admin
+2025-03-10 14:03:20 ERROR SQL syntax error near ' OR 1=1 --

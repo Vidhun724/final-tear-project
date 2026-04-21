@@ -1,0 +1,8 @@
+Jul 10 09:10:21 server sshd[1012]: Accepted password for vidhun from 192.168.1.5 port 22 ssh2
+Jul 10 09:12:34 server sshd[1015]: Accepted password for user1 from 192.168.1.7 port 22 ssh2
+Jul 10 09:15:02 server sudo: vidhun : TTY=pts/0 ; PWD=/home/vidhun ; USER=root ; COMMAND=/bin/apt update
+Jul 10 09:20:45 server sshd[1021]: Accepted password for user2 from 192.168.1.8 port 22 ssh2
+Jul 10 09:25:10 server sudo: user1 : TTY=pts/1 ; PWD=/home/user1 ; USER=root ; COMMAND=/bin/systemctl restart apache2
+Jul 10 09:30:55 server sshd[1030]: Accepted password for vidhun from 192.168.1.5 port 22 ssh2
+Jul 10 09:35:22 server sshd[1034]: Accepted password for admin from 192.168.1.9 port 22 ssh2
+Jul 10 09:40:18 server sudo: admin : TTY=pts/2 ; PWD=/home/admin ; USER=root ; COMMAND=/bin/systemctl status ssh

@@ -1,0 +1,3 @@
+2025-03-10 11:05:10 ERROR Unauthorized access attempt detected for admin panel
+2025-03-10 11:06:22 WARNING Unauthorized access attempt detected from IP 192.168.1.45
+2025-03-10 11:07:30 ERROR Unauthorized access attempt detected while accessing restricted API
