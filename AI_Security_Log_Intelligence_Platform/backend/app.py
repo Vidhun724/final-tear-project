@@ -29,12 +29,12 @@ app.secret_key = "mysecretkey123"
 # ---------------- DATABASE ----------------
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
+        host="yamanote.proxy.rlwy.net",
+        port=13885,
         user="root",
-        password="12345",
-        database="ai_security_platform"
+        password="dcCUgyBbigqRiRDKZawzngntSDniUFwI",
+        database="railway"
     )
-
 
 # ---------------- BASIC ROUTES ----------------
 @app.route('/')
